@@ -5,6 +5,7 @@
 #import <React/UIView+React.h>
 #include <MediaAccessibility/MediaAccessibility.h>
 #include <AVFoundation/AVFoundation.h>
+@import YouboraAVPlayerAdapter;
 
 static NSString *const statusKeyPath = @"status";
 static NSString *const playbackLikelyToKeepUpKeyPath = @"playbackLikelyToKeepUp";
@@ -24,6 +25,7 @@ static int const RCTVideoUnset = -1;
 
 @implementation RCTVideo
 {
+  YouboraIntegration *youbora;
   AVPlayer *_player;
   AVPlayerItem *_playerItem;
   NSDictionary *_source;
@@ -87,9 +89,20 @@ static int const RCTVideoUnset = -1;
 #endif
 }
 
+//*The init method that makes a call to super and adds default values and event dispatcher
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
 {
   if ((self = [super init])) {
+    if (!youbora) {
+      YBOptions *options = [[YBOptions alloc] init];
+     
+      options.accountCode = @"skittertvdev";
+      //options.contentLanguage = @"en";
+      // other options you think are useful for you to track
+     
+      [YouboraIntegration startPluginWithOptions:options];
+    }
+      
     _eventDispatcher = eventDispatcher;
 	  _automaticallyWaitsToMinimizeStalling = YES;
     _playbackRateObserverRegistered = NO;
@@ -144,6 +157,7 @@ static int const RCTVideoUnset = -1;
   return self;
 }
 
+//*This is where the player view controller(AVPlayerViewController) is created and initialized
 - (RCTVideoPlayerViewController*)createPlayerViewController:(AVPlayer*)player
                                              withPlayerItem:(AVPlayerItem*)playerItem {
     RCTVideoPlayerViewController* viewController = [[RCTVideoPlayerViewController alloc] init];
@@ -208,6 +222,7 @@ static int const RCTVideoUnset = -1;
 
 - (void)dealloc
 {
+  [YouboraIntegration finishYoubora];
   [[NSNotificationCenter defaultCenter] removeObserver:self];
   [self removePlayerLayer];
   [self removePlayerItemObservers];
@@ -375,8 +390,13 @@ static int const RCTVideoUnset = -1;
         [_player removeObserver:self forKeyPath:externalPlaybackActive context:nil];
         _isExternalPlaybackActiveObserverRegistered = NO;
       }
+      
+      [YouboraIntegration removeAdapter];
         
-      _player = [AVPlayer playerWithPlayerItem:_playerItem];
+      AVPlayer *player = [AVPlayer playerWithPlayerItem:self->_playerItem];
+      [YouboraIntegration setAdapter: player];
+      _player = player;
+//      _player = [AVPlayer playerWithPlayerItem:_playerItem];
       _player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         
       [_player addObserver:self forKeyPath:playbackRate options:0 context:nil];
@@ -390,6 +410,11 @@ static int const RCTVideoUnset = -1;
         [self setAutomaticallyWaitsToMinimizeStalling:_automaticallyWaitsToMinimizeStalling];
       }
 
+        
+        
+      [YouboraIntegration updateResource:[source valueForKey:@"uri"]];
+        
+        
       //Perform on next run loop, otherwise onVideoLoadStart is nil
       if (self.onVideoLoadStart) {
         id uri = [source objectForKey:@"uri"];

@@ -4,6 +4,8 @@
 #import <React/RCTUIManager.h>
 #import <AVFoundation/AVFoundation.h>
 
+//*Manager module to export properties
+
 @implementation RCTVideoManager
 
 RCT_EXPORT_MODULE();

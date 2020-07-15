@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6768954324BE136100E31B8D /* YouboraIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6768954224BE136100E31B8D /* YouboraIntegration.m */; };
+		6768954424BE136100E31B8D /* YouboraIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6768954224BE136100E31B8D /* YouboraIntegration.m */; };
+		6768954724BE14BD00E31B8D /* YouboraAVPlayerAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6768954524BE14BD00E31B8D /* YouboraAVPlayerAdapter.framework */; };
+		6768954824BE14BD00E31B8D /* YouboraLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6768954624BE14BD00E31B8D /* YouboraLib.framework */; };
+		6768954B24BE14DB00E31B8D /* YouboraAVPlayerAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6768954924BE14DB00E31B8D /* YouboraAVPlayerAdapter.framework */; };
+		6768954C24BE14DB00E31B8D /* YouboraLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6768954A24BE14DB00E31B8D /* YouboraLib.framework */; };
 		D1107C0A2110259000073188 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1107C032110259000073188 /* UIView+FindUIViewController.m */; };
 		D1107C0B2110259000073188 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1107C032110259000073188 /* UIView+FindUIViewController.m */; };
 		D1107C0C2110259000073188 /* RCTVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = D1107C052110259000073188 /* RCTVideo.m */; };
@@ -41,6 +47,12 @@
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTVideo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		641E28441F0EEC8500443AF6 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTVideo.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6768954124BE132800E31B8D /* YouboraIntegration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YouboraIntegration.h; path = Video/YouboraIntegration.h; sourceTree = "<group>"; };
+		6768954224BE136100E31B8D /* YouboraIntegration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YouboraIntegration.m; path = Video/YouboraIntegration.m; sourceTree = "<group>"; };
+		6768954524BE14BD00E31B8D /* YouboraAVPlayerAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouboraAVPlayerAdapter.framework; path = Carthage/Build/iOS/YouboraAVPlayerAdapter.framework; sourceTree = "<group>"; };
+		6768954624BE14BD00E31B8D /* YouboraLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouboraLib.framework; path = Carthage/Build/iOS/YouboraLib.framework; sourceTree = "<group>"; };
+		6768954924BE14DB00E31B8D /* YouboraAVPlayerAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouboraAVPlayerAdapter.framework; path = Carthage/Build/tvOS/YouboraAVPlayerAdapter.framework; sourceTree = "<group>"; };
+		6768954A24BE14DB00E31B8D /* YouboraLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouboraLib.framework; path = Carthage/Build/tvOS/YouboraLib.framework; sourceTree = "<group>"; };
 		D1107C012110259000073188 /* RCTVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTVideoPlayerViewController.h; path = Video/RCTVideoPlayerViewController.h; sourceTree = "<group>"; };
 		D1107C022110259000073188 /* RCTVideoPlayerViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTVideoPlayerViewControllerDelegate.h; path = Video/RCTVideoPlayerViewControllerDelegate.h; sourceTree = "<group>"; };
 		D1107C032110259000073188 /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FindUIViewController.m"; path = "Video/UIView+FindUIViewController.m"; sourceTree = "<group>"; };
@@ -57,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6768954724BE14BD00E31B8D /* YouboraAVPlayerAdapter.framework in Frameworks */,
+				6768954824BE14BD00E31B8D /* YouboraLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6768954B24BE14DB00E31B8D /* YouboraAVPlayerAdapter.framework in Frameworks */,
+				6768954C24BE14DB00E31B8D /* YouboraLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +97,10 @@
 		49E995712048B4CE00EA7890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6768954924BE14DB00E31B8D /* YouboraAVPlayerAdapter.framework */,
+				6768954A24BE14DB00E31B8D /* YouboraLib.framework */,
+				6768954524BE14BD00E31B8D /* YouboraAVPlayerAdapter.framework */,
+				6768954624BE14BD00E31B8D /* YouboraLib.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,6 +108,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				6768954224BE136100E31B8D /* YouboraIntegration.m */,
+				6768954124BE132800E31B8D /* YouboraIntegration.h */,
 				D1107C072110259000073188 /* RCTVideo.h */,
 				D1107C052110259000073188 /* RCTVideo.m */,
 				D1107C092110259000073188 /* RCTVideoManager.h */,
@@ -163,6 +185,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -183,6 +206,7 @@
 			files = (
 				D1107C0A2110259000073188 /* UIView+FindUIViewController.m in Sources */,
 				D1107C102110259000073188 /* RCTVideoPlayerViewController.m in Sources */,
+				6768954324BE136100E31B8D /* YouboraIntegration.m in Sources */,
 				D1107C0E2110259000073188 /* RCTVideoManager.m in Sources */,
 				D1107C0C2110259000073188 /* RCTVideo.m in Sources */,
 			);
@@ -194,6 +218,7 @@
 			files = (
 				D1107C0B2110259000073188 /* UIView+FindUIViewController.m in Sources */,
 				D1107C112110259000073188 /* RCTVideoPlayerViewController.m in Sources */,
+				6768954424BE136100E31B8D /* YouboraIntegration.m in Sources */,
 				D1107C0F2110259000073188 /* RCTVideoManager.m in Sources */,
 				D1107C0D2110259000073188 /* RCTVideo.m in Sources */,
 			);
@@ -280,6 +305,10 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -295,6 +324,10 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -316,6 +349,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RCTVideo;
@@ -335,6 +372,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RCTVideo;

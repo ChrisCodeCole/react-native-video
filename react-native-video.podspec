@@ -11,7 +11,8 @@ Pod::Spec.new do |s|
   s.author         = package['author']
   s.homepage       = 'https://github.com/react-native-community/react-native-video'
   s.source       = { :git => "https://github.com/react-native-community/react-native-video.git", :tag => "#{s.version}" }
-
+  s.ios.vendored_frameworks     = 'ios/Carthage/Build/iOS/YouboraAVPlayerAdapter.framework', 'ios/Carthage/Build/iOS/YouboraLib.framework'
+  s.tvos.vendored_frameworks     = 'ios/Carthage/Build/tvOS/YouboraAVPlayerAdapter.framework', 'ios/Carthage/Build/tvOS/YouboraLib.framework'
   s.ios.deployment_target = "8.0"
   s.tvos.deployment_target = "9.0"
 
