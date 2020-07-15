@@ -14,12 +14,10 @@
 ## Build Youbora Libraries
 ### Installing Carthage
 - [Carthage Documentation](https://github.com/Carthage/Carthage)
-- Homebrew
-
-- Command `brew install carthage`
+- Homebrew: Command `brew install carthage`
 
 ### Adding Frameworks
 - Within the ios/ directory of the project run the command below
-- Command `carthage bootstrap`
+- Command: `carthage bootstrap`
 
 
